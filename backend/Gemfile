@@ -34,8 +34,6 @@ gem "thruster", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
 
-gem 'graphql'
-
 group :development do
   gem 'graphiql-rails'
 end
@@ -51,4 +49,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
+gem 'graphql'
 gem "sprockets-rails", "~> 3.5"
+gem 'devise'
+gem "devise_token_auth", github: "lynndylanhurley/devise_token_auth", branch: "master"
