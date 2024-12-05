@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:17.2
+    environment:
+      POSTGRES_DB: rails_app_development
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    command: bash -c "bundle exec rails s -b '0.0.0.0'"
+    volumes:
+      - ./backend:/rails-app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=rails_app_development
+    working_dir: /rails-app
+    tty: true
+    stdin_open: true
+  frontend:
+    build:
+      context: ./frontend
+    command: bash -c "npm run dev"
+    volumes:
+      - ./frontend:/next-app
+    ports:
+      - "8000:3000"
+    working_dir: /next-app
+    tty: true
+    stdin_open: true
+volumes:
+  postgres_data:
