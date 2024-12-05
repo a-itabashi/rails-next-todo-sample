@@ -27,5 +27,10 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :me, Types::UserType, null: true, description: "The currently logged in user"
+    def me
+      context[:current_user]
+    end
   end
 end
