@@ -12,5 +12,9 @@ module Types
     field :create_user, mutation: Mutations::CreateUser
     field :login_user, mutation: Mutations::LoginUser
     field :logout_user, mutation: Mutations::LogoutUser
+
+    field :createTodo, mutation: Mutations::Todos::Create
+    field :updateTodo, mutation: Mutations::Todos::Update
+    field :deleteTodo, mutation: Mutations::Todos::Delete
   end
 end
