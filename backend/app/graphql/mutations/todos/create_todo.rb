@@ -1,6 +1,6 @@
 module Mutations
   module Todos
-    class Create < BaseMutation
+    class CreateTodo < BaseMutation
       argument :title, String, required: true
       argument :description, String, required: false
 

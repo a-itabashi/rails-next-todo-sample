@@ -1,6 +1,6 @@
 module Mutations
   module Todos
-    class Update < BaseMutation
+    class UpdateTodo < BaseMutation
       argument :id, ID, required: true
       argument :title, String, required: false
       argument :description, String, required: false

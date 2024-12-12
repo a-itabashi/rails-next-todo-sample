@@ -1,6 +1,6 @@
 module Mutations
   module Todos
-    class Delete < BaseMutation
+    class DeleteTodo < BaseMutation
       argument :id, ID, required: true
 
       type Types::TodoType

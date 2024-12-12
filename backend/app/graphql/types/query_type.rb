@@ -21,16 +21,19 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
-    end
+    # # TODO: remove me
+    # field :test_field, String, null: false,
+    #   description: "An example field added by the generator"
+    # def test_field
+    #   "Hello World!"
+    # end
 
     field :me, Types::UserType, null: true, description: "The currently logged in user"
     def me
       context[:current_user]
     end
+
+    field :users, resolver: Resolvers::Users::UsersResolver
+    field :user, resolver: Resolvers::Users::UserResolver
   end
 end

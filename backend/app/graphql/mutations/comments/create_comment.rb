@@ -1,6 +1,6 @@
 module Mutations
   module Comments
-    class Create < BaseMutation
+    class CreateComment < BaseMutation
       argument :todo_id, ID, required: true
       argument :content, String, required: true
 

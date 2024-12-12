@@ -1,14 +1,13 @@
 module Mutations
   module Comments
-    class Update < BaseMutation
+    class DeleteComment < BaseMutation
       argument :id, ID, required: true
-      argument :content, String, required: true
 
       type Types::CommentType
 
-      def resolve(id:, content:)
+      def resolve(id:)
         comment = Comment.find(id)
-        comment.update!(content: content)
+        comment.destroy
         comment
       end
     end
