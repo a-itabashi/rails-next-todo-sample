@@ -1,6 +1,7 @@
 module Mutations
   module Todos
-    class CreateTodo < BaseMutation
+    class Create < BaseMutation
+      graphql_name "CreateTodo"
       argument :title, String, required: true
       argument :description, String, required: false
 

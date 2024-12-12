@@ -1,6 +1,7 @@
 module Mutations
   module Users
-    class CreateUser < Mutations::BaseMutation
+    class Create < Mutations::BaseMutation
+      graphql_name "CreateUser"
       argument :email, String, required: true
       argument :password, String, required: true
       argument :password_confirmation, String, required: true

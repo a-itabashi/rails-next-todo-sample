@@ -1,7 +1,8 @@
 # https://github.com/lynndylanhurley/devise_token_auth/blob/b7fcfdf98a84a5d2ae22e005eaa372a668cc9c76/app/controllers/devise_token_auth/sessions_controller.rb#L52
 module Mutations
   module Users
-    class LogoutUser < Mutations::BaseMutation
+    class Logout < Mutations::BaseMutation
+      graphql_name "LogoutUser"
       # 出力フィールドの定義
       field :success, Boolean, null: false
       field :errors, [String], null: true

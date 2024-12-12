@@ -1,6 +1,7 @@
 module Mutations
   module Todos
-    class DeleteTodo < BaseMutation
+    class Delete < BaseMutation
+      graphql_name "DeleteTodo"
       argument :id, ID, required: true
 
       type Types::TodoType

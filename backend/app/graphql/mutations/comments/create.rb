@@ -1,6 +1,7 @@
 module Mutations
   module Comments
-    class CreateComment < BaseMutation
+    class Create < BaseMutation
+      graphql_name "CreateComment"
       argument :todo_id, ID, required: true
       argument :content, String, required: true
 

@@ -1,6 +1,7 @@
 module Mutations
   module Comments
-    class UpdateComment < BaseMutation
+    class Update < BaseMutation
+       graphql_name "UpdateComment"
       argument :id, ID, required: true
       argument :content, String, required: true
 

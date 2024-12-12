@@ -1,6 +1,7 @@
 module Mutations
   module Todos
-    class UpdateTodo < BaseMutation
+    class Update < BaseMutation
+      graphql_name "UpdateTodo"
       argument :id, ID, required: true
       argument :title, String, required: false
       argument :description, String, required: false

@@ -1,6 +1,7 @@
 module Mutations
   module Comments
-    class DeleteComment < BaseMutation
+    class Delete < BaseMutation
+      graphql_name "DeleteComment"
       argument :id, ID, required: true
 
       type Types::CommentType

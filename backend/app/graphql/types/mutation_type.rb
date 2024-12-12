@@ -9,16 +9,16 @@ module Types
     #   "Hello World"
     # end
 
-    field :create_user, mutation: Mutations::Users::CreateUser
-    field :login_user, mutation: Mutations::Users::LoginUser
-    field :logout_user, mutation: Mutations::Users::LogoutUser
+    field :create_user, mutation: Mutations::Users::Create
+    field :login_user, mutation: Mutations::Users::Login
+    field :logout_user, mutation: Mutations::Users::Logout
 
-    field :create_todo, mutation: Mutations::Todos::CreateTodo
-    field :update_todo, mutation: Mutations::Todos::UpdateTodo
-    field :delete_todo, mutation: Mutations::Todos::DeleteTodo
+    field :create_todo, mutation: Mutations::Todos::Create
+    field :update_todo, mutation: Mutations::Todos::Update
+    field :delete_todo, mutation: Mutations::Todos::Delete
 
-    field :create_comment, mutation: Mutations::Comments::CreateComment
-    field :update_comment, mutation: Mutations::Comments::UpdateComment
-    field :delete_comment, mutation: Mutations::Comments::DeleteComment
+    field :create_comment, mutation: Mutations::Comments::Create
+    field :update_comment, mutation: Mutations::Comments::Update
+    field :delete_comment, mutation: Mutations::Comments::Delete
   end
 end
