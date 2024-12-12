@@ -1,6 +1,6 @@
 module Resolvers
   module Users
-    class UserResolver < Resolvers::BaseResolver
+    class User < Resolvers::BaseResolver
       # description 'Find an User by ID. Require ID'
 
       argument :id, ID, required: true
@@ -8,7 +8,7 @@ module Resolvers
       type Types::UserType, null: false
 
       def resolve(id:)
-        User.find(id)
+        ::User.find(id)
       end
     end
   end

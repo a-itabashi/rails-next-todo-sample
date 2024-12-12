@@ -1,10 +1,10 @@
 module Resolvers
   module Users
-    class UsersResolver < Resolvers::BaseResolver
+    class Users < Resolvers::BaseResolver
       type [Types::UserType], null: false
 
       def resolve
-        User.all
+        ::User.all
       end
     end
   end
