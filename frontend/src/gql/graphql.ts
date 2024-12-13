@@ -236,6 +236,7 @@ export type GetTodosQuery = {
     title: string;
     description?: string | null;
     comments: Array<{ __typename?: 'Comment'; id: string; content: string }>;
+    user: { __typename?: 'User'; email: string };
   }>;
 };
 
@@ -269,6 +270,16 @@ export const GetTodosDocument = {
                         kind: 'Field',
                         name: { kind: 'Name', value: 'content' },
                       },
+                    ],
+                  },
+                },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'user' },
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { kind: 'Field', name: { kind: 'Name', value: 'email' } },
                     ],
                   },
                 },

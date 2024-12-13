@@ -14,8 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-  'query GetTodos {\n  todos {\n    id\n    title\n    description\n    comments {\n      id\n      content\n    }\n  }\n}':
-    types.GetTodosDocument,
+    "query GetTodos {\n  todos {\n    id\n    title\n    description\n    comments {\n      id\n      content\n    }\n    user {\n      email\n    }\n  }\n}": types.GetTodosDocument,
 };
 
 /**
@@ -35,13 +34,10 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(
-  source: 'query GetTodos {\n  todos {\n    id\n    title\n    description\n    comments {\n      id\n      content\n    }\n  }\n}',
-): (typeof documents)['query GetTodos {\n  todos {\n    id\n    title\n    description\n    comments {\n      id\n      content\n    }\n  }\n}'];
+export function graphql(source: "query GetTodos {\n  todos {\n    id\n    title\n    description\n    comments {\n      id\n      content\n    }\n    user {\n      email\n    }\n  }\n}"): (typeof documents)["query GetTodos {\n  todos {\n    id\n    title\n    description\n    comments {\n      id\n      content\n    }\n    user {\n      email\n    }\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
-  TDocumentNode extends DocumentNode<infer TType, any> ? TType : never;
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RailsAppSchema < GraphQL::Schema
+  use GraphQL::Batch
+
   mutation(Types::MutationType)
   query(Types::QueryType)
 

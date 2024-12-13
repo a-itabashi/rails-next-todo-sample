@@ -4,6 +4,7 @@ module Resolvers
       type [Types::TodoType], null: false
 
       def resolve
+        # ::Todo.all.preload(:comments)
         ::Todo.all
       end
     end

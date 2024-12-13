@@ -28,6 +28,14 @@ export default async function Home() {
           <li key={todo.id} className='mb-4'>
             <h2 className='text-lg font-semibold'>{todo.title}</h2>
             <p className='text-gray-600'>{todo.description}</p>
+            <p className='text-gray-400'>{todo.user.email}</p>
+            <ul className='pl-5 mt-2'>
+              {todo.comments.map((comment) => (
+                <li key={comment.id} className='text-gray-400'>
+                  {comment.content}
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
