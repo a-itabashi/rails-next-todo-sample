@@ -128,6 +128,9 @@ GEM
     graphql (2.4.5)
       base64
       fiber-storage
+    graphql-batch (0.6.0)
+      graphql (>= 1.12.18, < 3)
+      promise.rb (~> 0.7.2)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -190,6 +193,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
+    promise.rb (0.7.4)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -209,6 +213,8 @@ GEM
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.8)
+    rack-cors (2.0.2)
+      rack (>= 2.0.0)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -359,12 +365,14 @@ DEPENDENCIES
   devise_token_auth!
   graphiql-rails
   graphql
+  graphql-batch
   kamal
   pg (~> 1.1)
   pry-byebug
   pry-doc
   pry-rails
   puma (>= 5.0)
+  rack-cors
   rails (~> 8.0.0)
   rubocop-rails-omakase
   solargraph
