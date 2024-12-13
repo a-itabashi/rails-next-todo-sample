@@ -5,6 +5,7 @@ module Types
     field :description, String, null: true
     field :user, Types::UserType, null: false
     field :comments, [Types::CommentType], null: false
+    # connection :comments, Types::CommentType.connection_type, null: false
 
     def self.authorize?(object, context)
       object.user == context[:current_user]
